@@ -1,0 +1,6 @@
+{
+  "name": "Cargas Loyalty & Operations",
+  "description": "منظومة كارجاس للولاء والعمليات لمحطات تموين الغاز الطبيعي للمركبات وإدارة النقاط وحوافز الفنيين وتوليد كيو آر كود للمضخات ومكافحة التلاعب.",
+  "requestFramePermissions": ["geolocation", "camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

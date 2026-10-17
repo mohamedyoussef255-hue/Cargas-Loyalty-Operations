@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --cargas-primary: #117A38;
+    --cargas-dark: #0B4E24;
+    --cargas-accent: #FFC72C;
+    --cargas-amber: #F59E0B;
+  }
+
+  body {
+    font-family: 'Cairo', 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Custom laser scanning animation for QR camera viewfinder */
+@keyframes scanLaser {
+  0% {
+    top: 5%;
+    opacity: 0.9;
+  }
+  50% {
+    top: 90%;
+    opacity: 1;
+  }
+  100% {
+    top: 5%;
+    opacity: 0.9;
+  }
+}
+
+.scanner-laser {
+  animation: scanLaser 2.2s ease-in-out infinite;
+}
+
+/* Pulse glow for status indicators */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(17, 122, 56, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 199, 44, 0.7);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Smooth hidden scrollbar for horizontal chips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Print Styles for Pump QR Code Sticker Badges */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print, header, nav, .admin-no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-page-break {
+    page-break-after: always;
+    break-after: page;
+  }
+  @page {
+    margin: 8mm;
+    size: auto;
+  }
+}
+
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}
